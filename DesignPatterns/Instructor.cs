@@ -30,6 +30,11 @@ namespace DesignPatterns
             PhoneNumber = phoneNumber;
         }
 
+        public void AddSpecialization(Specialization specialization)
+        {
+            Specializations.Add(specialization);
+            NotifyTrainees("Instructor specializations have been updated");
+        }
         public void AddTrainee(IObserver trainee)
         {
             trainees.Add(trainee);

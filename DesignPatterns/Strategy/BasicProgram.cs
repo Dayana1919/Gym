@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Gym.Decorator;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,15 +10,20 @@ namespace Gym.Strategy
     public class BasicProgram :ITrainingProgram
     {
         public string Description { get; private set; }
+        public decimal Price { get; private set; }
+        public List<TrainingDecorator> excersices = new List<TrainingDecorator>();
 
-        public BasicProgram()
+        public BasicProgram(decimal price)
         {
-            Description = "Основна тренировъчна програма";
+            Description = "Basic Training Program";
+            Price = price;
         }
 
-        public string Execute()
+        public void Execute()
         {
-            return Description;
+            Console.WriteLine($"Basic program with price ${this.Price}");
         }
+
+
     }
 }

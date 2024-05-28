@@ -1,4 +1,5 @@
-﻿using Gym.Strategy;
+﻿using DesignPatterns.Observer;
+using Gym.Strategy;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,11 @@ namespace Gym.Decorator
         public virtual string Execute()
         {
             return decoratedProgram.Execute();
+        }
+
+        public void UpdateProgram(IObserver trainee)
+        {
+            
         }
     }
 }
