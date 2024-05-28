@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gym.Strategy.Payments
 {
-    public class Skrill
+    public class Skrill: IPayment
     {
         public string SkrillId { get; set; }
 

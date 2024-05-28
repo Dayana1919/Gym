@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gym.Strategy.Payments
 {
-    public class GooglePay
+    public class GooglePay : IPayment
     {
         public string GooglePayId { get; set; }
 

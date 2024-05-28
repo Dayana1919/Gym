@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gym.Common
+namespace Gym.Common.Additions
 {
     public class IAddition
     {
-        public virtual string AddAddition();
+        decimal Price { get; set; }
+        string? Description { get; set; }
     }
 }

@@ -8,6 +8,6 @@ namespace Gym.Strategy
 {
     public interface ITrainingProgram
     {
-        string Execute();
+        void Execute();
     }
 }

@@ -17,9 +17,9 @@ namespace Gym.Decorator
             this.decoratedProgram = decoratedProgram;
         }
 
-        public virtual string Execute()
+        public virtual void Execute()
         {
-            return decoratedProgram.Execute();
+            decoratedProgram.Execute();
         }
 
         public void UpdateProgram(IObserver trainee)

@@ -12,22 +12,23 @@ namespace DesignPatterns.Observer
         public string Name { get; private set; }
         public int Age { get; private set; }
         public string Email { get; set; }
-        public string PhoneNumber { get; private set; }
-        public string Address { get; private set; }
-        public string MembershipType { get; private set; }
-        public DateTime MembershipExpiry { get; private set; }
-        public IPayment PaymentMethod { get; private set; }
+        public string PhoneNumber { get; set; }
+        public string Address { get; set; }
+
+        public DateTime MembershipStartDate { get; set; }
+        public DateTime MembershipExpiry { get; set; }
+        public IPayment PaymentMethod { get; set; }
 
         //public List<Addition> additions { get; private set; }
 
-        public Trainee(string name, int age, string email, string phoneNumber, string address, string membershipType, DateTime membershipExpiry)
+        public Trainee(string name, int age, string email, string phoneNumber, string address, DateTime membershipStart, DateTime membershipExpiry)
         {
             Name = name;
             Age = age;
             Email = email;
             PhoneNumber = phoneNumber;
             Address = address;
-            MembershipType = membershipType;
+            MembershipStartDate = membershipStart;
             MembershipExpiry = membershipExpiry;
         }
 

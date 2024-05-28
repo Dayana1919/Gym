@@ -9,9 +9,9 @@ namespace DesignPatterns.Singleton
     public class Gym
     {
         private static Gym gym;
-        public string Name { get; private set; }
-        public string Location { get; private set; }
-        public string WorkingHours { get; private set; }
+        public string Name { get; set; }
+        public string Location { get; set; }
+        public string WorkingHours { get; set; }
 
 
         private Gym(string name, string location, string workingHours)
