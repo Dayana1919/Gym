@@ -9,11 +9,19 @@ namespace Gym.Decorator
 {
     public class StrengthDecorator : TrainingDecorator
     {
-        public StrengthDecorator(ITrainingProgram decoratedProgram) : base(decoratedProgram) { }
-
-        public override string Execute()
+        public new string Name;
+        public StrengthDecorator(ITrainingProgram decoratedProgram,string name) : base(decoratedProgram,name) 
         {
-            return base.Execute() + " + Strength exercises";
+        }
+
+        public new void Create()
+        {
+            base.Create();
+            if (decoratedProgram is BasicProgram basicProgram)
+            {
+                basicProgram.Exercises.Add(this);
+            }
+            Console.WriteLine($"Adding Strength exercise: {this.Name}");
         }
     }
 }

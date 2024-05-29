@@ -8,7 +8,7 @@ namespace Gym.Common.Additions
 {
     public class IAddition
     {
-        decimal Price { get; set; }
-        string? Description { get; set; }
+        public virtual decimal Price { get; set; }
+        public virtual string? Description { get; set; }
     }
 }

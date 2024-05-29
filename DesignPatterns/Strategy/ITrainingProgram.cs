@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Gym.Decorator;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,8 @@ namespace Gym.Strategy
 {
     public interface ITrainingProgram
     {
-        void Execute();
+
+        public List<TrainingDecorator> Exercises { get; set; }
+        public void Create();
     }
 }

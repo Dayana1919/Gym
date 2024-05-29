@@ -9,19 +9,25 @@ namespace Gym.Strategy
 {
     public class BasicProgram :ITrainingProgram
     {
-        public string Description { get; private set; }
-        public decimal Price { get; private set; }
-        public List<TrainingDecorator> excersices = new List<TrainingDecorator>();
+        public string Description { get; set; }
+        public decimal Price { get; set; }
+        
+        public List<TrainingDecorator> Exercises { get; set; }
 
         public BasicProgram(decimal price)
         {
             Description = "Basic Training Program";
             Price = price;
+            this.Exercises = new List<TrainingDecorator>();
         }
 
-        public void Execute()
+        public void Create()
         {
-            Console.WriteLine($"Basic program with price ${this.Price}");
+            Console.WriteLine($"Creating {Description} with price {Price}.");
+            foreach (var exercise in Exercises)
+            {
+                Console.WriteLine($"Exercise: {exercise.Name}");
+            }
         }
 
 

@@ -1,4 +1,5 @@
 ﻿using DesignPatterns.Observer;
+using DesignPatterns.Singleton;
 using Gym.Strategy;
 using System;
 using System.Collections.Generic;
@@ -8,23 +9,23 @@ using System.Threading.Tasks;
 
 namespace Gym.Decorator
 {
-    public class TrainingDecorator: ITrainingProgram
+    public class TrainingDecorator : ITrainingProgram
     {
         protected ITrainingProgram decoratedProgram;
+        public string Name;
 
-        public TrainingDecorator(ITrainingProgram decoratedProgram)
+        public TrainingDecorator(ITrainingProgram decoratedProgram, string name)
         {
             this.decoratedProgram = decoratedProgram;
+            this.Name = name;
         }
 
-        public virtual void Execute()
+        public List<TrainingDecorator> Exercises { get; set; }
+
+        public void Create()
         {
-            decoratedProgram.Execute();
+             decoratedProgram.Create();
         }
 
-        public void UpdateProgram(IObserver trainee)
-        {
-            
-        }
     }
 }

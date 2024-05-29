@@ -1,7 +1,10 @@
 ﻿using DesignPatterns.Observer;
 using Gym.Common;
+using Gym.Decorator;
+using Gym.Strategy;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -69,5 +72,23 @@ namespace DesignPatterns
             NotifyTrainees($"Instructor phone has been updated.");
 
         }
+
+        public void UpdateProgram(ITrainingProgram program, List<TrainingDecorator> newExercises)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append("The basic program has been updated.New exercises: ");
+            foreach (var exercise in newExercises)
+            {
+                program.Exercises.Add(exercise);
+                sb.Append($"{exercise.Name} ");
+            }
+            program.Create();
+
+            
+
+            string finalString = sb.ToString();
+            NotifyTrainees(finalString);
+        }
+
     }
 }

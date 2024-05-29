@@ -6,26 +6,25 @@ using System.Threading.Tasks;
 
 namespace DesignPatterns.Singleton
 {
-    public class Gym
+    public class Gym1
     {
-        private static Gym gym;
+        private static Gym1 gym;
         public string Name { get; set; }
         public string Location { get; set; }
         public string WorkingHours { get; set; }
 
-
-        private Gym(string name, string location, string workingHours)
+        private Gym1(string name, string location, string workingHours)
         {
             Name = name;
             Location = location;
             WorkingHours = workingHours;
         }
 
-        public static Gym Instance(string name = "Default Gym", string location = "Default Location", string workingHours = "08:00 - 22:00")
+        public static Gym1 Instance(string name = "Gym 1", string location = "Brussesls, Rue du Anne", string workingHours = "08:00 - 22:00")
         {
             if (gym == null)
             {
-                gym = new Gym(name, location, workingHours);
+                gym = new Gym1(name, location, workingHours);
             }
             return gym;
         }

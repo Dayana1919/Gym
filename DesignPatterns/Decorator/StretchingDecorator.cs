@@ -9,11 +9,25 @@ namespace Gym.Decorator
 {
     public class StretchingDecorator : TrainingDecorator
     {
-        public StretchingDecorator(ITrainingProgram decoratedProgram) : base(decoratedProgram) { }
-
-        public override string Execute()
+        public new string Name;
+        public StretchingDecorator(ITrainingProgram decoratedProgram, string name) : base(decoratedProgram, name) 
         {
-            return base.Execute() + " + Streching exercises";
+           
+        }
+
+        public new void Create()
+        {
+            base.Create();
+            if (decoratedProgram is BasicProgram basicProgram)
+            {
+                basicProgram.Exercises.Add(this);
+            }
+            AddExercise();
+        }
+
+        private void AddExercise()
+        {
+            Console.WriteLine($"Adding Stretching exercise: {this.Name}");
         }
     }
 }

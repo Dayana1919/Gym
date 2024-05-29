@@ -8,8 +8,8 @@ namespace Gym.Common.Additions
 {
     public class WeightLossSupplements : IAddition
     {
-        public decimal Price { get; set; }
-        public string Description { get; set; }
+        public override decimal Price { get; set; }
+        public override string? Description { get; set; }
 
         public WeightLossSupplements(decimal price, string description)
         {

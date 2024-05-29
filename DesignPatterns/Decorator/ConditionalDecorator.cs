@@ -9,11 +9,19 @@ namespace Gym.Decorator
 {
     public class ConditionalDecorator : TrainingDecorator
     {
-        public ConditionalDecorator(ITrainingProgram decoratedProgram) : base(decoratedProgram) { }
-
-        public override string Execute()
+        public new string Name;
+        public ConditionalDecorator(ITrainingProgram decoratedProgram, string name) : base(decoratedProgram,name) 
         {
-            return base.Execute() + " + Conditional exercises";
+        }
+
+        public new void Create()
+        {
+            base.Create();
+            if (decoratedProgram is BasicProgram basicProgram)
+            {
+                basicProgram.Exercises.Add(this);
+            }
+            Console.WriteLine($"Adding Conditional exercise: {this.Name}");
         }
     }
 }

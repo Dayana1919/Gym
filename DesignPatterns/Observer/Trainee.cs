@@ -1,4 +1,5 @@
-﻿using Gym.Strategy.Payments;
+﻿using Gym.Common.Additions;
+using Gym.Strategy.Payments;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DesignPatterns.Observer
 {
-    public class Trainee : IObserver, IPayment
+    public class Trainee : IObserver
     {
         public string Name { get; private set; }
         public int Age { get; private set; }
@@ -19,7 +20,7 @@ namespace DesignPatterns.Observer
         public DateTime MembershipExpiry { get; set; }
         public IPayment PaymentMethod { get; set; }
 
-        //public List<Addition> additions { get; private set; }
+        public List<IAddition> additions { get; set; } = new List<IAddition>();
 
         public Trainee(string name, int age, string email, string phoneNumber, string address, DateTime membershipStart, DateTime membershipExpiry)
         {
@@ -54,7 +55,7 @@ namespace DesignPatterns.Observer
 
         public void Update(string message)
         {
-            Console.WriteLine($"New notification: {message}");
+            Console.WriteLine($"{Name} has new notification: {message}");
         }
 
         public void MakePayment(decimal totalAmount)
@@ -65,6 +66,12 @@ namespace DesignPatterns.Observer
         public decimal CalculateAmountToPay(decimal amount, decimal additions)
         {
             return amount + additions;
+        }
+
+        public void AddAddition (IAddition addition)
+        {
+            additions.Add(addition);
+            Console.WriteLine($"{this.Name} the {addition.GetType().Name} has been added to your program");
         }
     }
 }
