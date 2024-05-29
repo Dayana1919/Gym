@@ -84,8 +84,6 @@ namespace DesignPatterns
             }
             program.Create();
 
-            
-
             string finalString = sb.ToString();
             NotifyTrainees(finalString);
         }

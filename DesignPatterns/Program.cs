@@ -14,7 +14,7 @@ public class Program
     public static void Main(string[] args)
     {
         // Creating a gym (Singleton)
-        Gym1 gym = Gym1.Instance("FitLife Gym", "Downtown", "06:00 - 23:00");
+        Gym1 gym = Gym1.Instance("New Life", "Brussels", "06:00 - 23:00");
 
         // Displaying gym information
         Console.WriteLine($"Gym: {gym.Name}");

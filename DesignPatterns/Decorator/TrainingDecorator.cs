@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Gym.Decorator
 {
-    public class TrainingDecorator : ITrainingProgram
+    public abstract class TrainingDecorator : ITrainingProgram
     {
         protected ITrainingProgram decoratedProgram;
         public string Name;

@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace Gym.Common.Additions
 {
-    public class IAddition
+    public interface IAddition
     {
-        public virtual decimal Price { get; set; }
-        public virtual string? Description { get; set; }
+        public decimal Price { get; set; }
+
+        public string? Description { get; set; }
+        void Execute();
     }
 }

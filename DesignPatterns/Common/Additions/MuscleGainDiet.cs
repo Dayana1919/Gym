@@ -8,13 +8,18 @@ namespace Gym.Common.Additions
 {
     public class MuscleGainDiet: IAddition
     {
-        public override decimal Price { get; set; }
-        public override string? Description { get; set; }
+        public decimal Price { get; set; }
+        public string? Description { get; set; }
 
         public MuscleGainDiet(decimal price, string description)
         {
             this.Price = price;
             this.Description = description;
+        }
+
+        public void Execute()
+        {
+            Console.WriteLine($"Addition {this.Description} with price {this.Price}");
         }
     }
 }
